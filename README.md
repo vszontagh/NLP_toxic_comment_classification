@@ -1,7 +1,11 @@
 # Toxic Comment Classification with NLP
 
-## Business Case
+## Business Understanding
 Toxic comment classification can be useful for businesses in a number of ways. For example, if a business operates a social media platform or an online forum, it may be important to identify and remove toxic comments in order to create a positive and welcoming environment for users. This can help to reduce the risk of users becoming distressed or offended by toxic content, which can lead to negative brand associations and a decrease in user engagement and retention. Additionally, identifying and removing toxic comments can help to prevent the spread of misinformation or hateful ideologies, which can have serious consequences for both the business and society as a whole. In general, toxic comment classification can help businesses to foster a more positive and safe online community, which can ultimately lead to improved brand reputation and customer loyalty.
+
+## Business Problem
+Company XYZ is operating a website with an online discussion forum. Due to that they are relatively new to the market and thus far don’t have much experience in content moderation. Their resources for content moderation are also limited, and with a high volume of comments  being posted in multiple forums at the same time. As a result they have trouble flagging all the toxic comments. Therefore there is a risk of users turning away from their site due to harassment and a toxic environment.
+They would like to build a machine learning model which can handle large amounts of data and flag these types of comments in a timely manner, to prevent the spreading of these issues and take the correct disciplinary action against the violators.
 
 ## Data
 
@@ -60,6 +64,5 @@ Due to the high imbalance the model might not had enough toxic data to train on.
 ├── README.md
 ├── Toxic_Comment_Classification-toxic-stem.ipynb
 ├── Toxic_Comment_Classification-toxic-lemmatization.ipynb
-├── presentation.pdf
-└── Toxic_Comment_Classification-toxic-stem.ipynb
+└── presentation.pdf
 ```
