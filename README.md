@@ -34,22 +34,32 @@ These models all work well with large dataset. MultinomialNB is simple and effic
 
 Random Forest can also handle high-dimensional data well. It is robust to noise in the data and resistant to overfitting. It's easy to implement and tune. It can also perform well without fine-tuning. And lastly it fast to train and predict, which makes it an optimal choise for large datasets.
 
+### Best Model
 
+Top 20 toxic tokens
+<p align='center'>
+  <img src="data/ensemble_auc.png">
+</p>
+This last ensemble model performed the best. This model combines the prediction of the MultinomialNB and the XGBoost model with best params. This Stacking model uses the tfidf vectorizer and SMOTE. The resulting model has a high recall score of 84% and an AUC of 0.97 on the test set, with relatively low numbers of false negatives (492) and false positives (1111).
+<p align='center'>
+  <img src="data/matrix.png">
+</p>
+Part of the reason I choose this model is becaue this model had the lowest FN - FP pair. It is important to minimize the number of false negatives, because users wouldn't be flagged for writting toxic comments, when actually they are.
 
-
-
-### Conclusions
+## Conclusions
+This model is likely performed the well because the combination of MultinomialNB and XGBoost are able to capture a wide range of patters in the data, allowing it to make more accurate predictions than the previous models. In addition the use of tfidf vectorizer may be able to capture important information about the frequency and importance of different words in the data. SMOTE likely helped to improve the model's performance by better representing the features of the data and addressing class imbalances respectively.
 
 ### Limitations
 Due to the high imbalance the model might not had enough toxic data to train on. 
 
 ## Repository Structure
-
+```
 ├── data
 ├── images
 ├── .gitignore
 ├── README.md
-├── model.py
-├── model2.pkl
+├── Toxic_Comment_Classification-toxic-stem.ipynb
+├── Toxic_Comment_Classification-toxic-lemmatization.ipynb
 ├── presentation.pdf
 └── Toxic_Comment_Classification-toxic-stem.ipynb
+```
