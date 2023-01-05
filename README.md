@@ -38,9 +38,10 @@ These models all work well with large dataset. MultinomialNB is simple and effic
 
 Random Forest can also handle high-dimensional data well. It is robust to noise in the data and resistant to overfitting. It's easy to implement and tune. It can also perform well without fine-tuning. And lastly it fast to train and predict, which makes it an optimal choise for large datasets.
 
+I ran 7 Models out of all of them the 
+
 ### Best Model
 
-Top 20 toxic tokens
 <p align='center'>
   <img src="data/ensemble_auc.png">
 </p>
