@@ -18,12 +18,12 @@ After removing those the dataset was tokenized, stopwords and punctuations were 
 
 Top 20 tokens in the whole corpus
 <p align='center'>
-  <img src="top20_tokens_all.png">
+  <img src="data/top20_tokens_all.png">
 </p>
 
 Top 20 toxic tokens
 <p align='center'>
-  <img src="top20_toxic.png">
+  <img src="data/top20_toxic.png">
 </p>
 In the above wordcloud of most frequent toxic comments clearly shows that some users use abusive language to harass others, creating a toxic and unwelcoming environment envirement, which woulds lead to more user either stop expressing themself on the online platform or leave it altogether.
 
