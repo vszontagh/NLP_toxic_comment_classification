@@ -41,7 +41,7 @@ Random Forest can also handle high-dimensional data well. It is robust to noise 
 ### Conclusions
 
 ### Limitations
-
+Due to the high imbalance the model might not had enough toxic data to train on. 
 
 ## Repository Structure
 
