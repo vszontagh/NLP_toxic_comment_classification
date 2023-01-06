@@ -22,7 +22,7 @@ Top 20 tokens in the whole corpus
   <img src="images/top20_tokens_all.png" width="600" height="400">
 </p>
 As expedted of wikipedia comments most users are discussing articles and discussing edits, all the words represnted are normal. None of them are toxic.
-<br>
+<br/>
 /Disclaimer: the below frequent toxic word not a representation of my beliefs or ideologies, it's purely just visualizing the most frequently used toxic words in the dataset./ 
 
 Top 20 toxic tokens
