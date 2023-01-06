@@ -45,8 +45,9 @@ These models all work well with large dataset. MultinomialNB is simple and effic
 Random Forest can also handle high-dimensional data well. It is robust to noise in the data and resistant to overfitting. It's easy to implement and tune. It can also perform well without fine-tuning. And lastly it's fast to train and predict, which makes it an optimal choice for large datasets.
 
 And lastly I chose XGBoost as it is fast and it has number of hyperparameter to optimize the model's performance.
-
+<p align='center'>
 <img src="images/model.png" width="700" height="550" >
+<p/>
 
 Out of all the models it was surprising that RandomForest  with best params didn't do a good job in terms of low F1 scores (31) and extremly high number of false positive cases (10k+), which means that more than 10,000 comments would be flagged as they are toxic when they are not.
 
