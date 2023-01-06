@@ -18,18 +18,18 @@ The dataset contains 159,571 rows and 8 columns, including: id, comment_text, to
 There is a high imbalance 90.5% - 9.5% in normal and toxic classes, this will be addressed in the modeling section by applying SMOTE and RandomOverSampler techniques.
 
 Top 20 tokens in the whole corpus
-<p align='center'>
+
   <img src="images/top20_tokens_all.png" width="700" height="550">
-</p>
+
 As expedted of wikipedia comments most users are discussing articles and discussing edits, all the words represnted are normal. None of them are toxic.
 <br/>
 <p>&nbsp</p>
 /Disclaimer: the below frequent toxic word not a representation of my beliefs or ideologies, it's purely just visualizing the most frequently used toxic words in the dataset./ 
 
 Top 20 toxic tokens
-<p align='center'>
+
   <img src="images/top20_toxic_.png" width="700" height="550">
-</p>
+
 The above wordcloud of most frequent toxic comments clearly shows that some users use abusive language to harass others, thereby creating a toxic and unwelcoming environment, which would lead to more users either simply not expressing themself on the online platform or leave it altogether.
 
 ## Preprocessing
@@ -45,9 +45,10 @@ These models all work well with large dataset. MultinomialNB is simple and effic
 Random Forest can also handle high-dimensional data well. It is robust to noise in the data and resistant to overfitting. It's easy to implement and tune. It can also perform well without fine-tuning. And lastly it's fast to train and predict, which makes it an optimal choice for large datasets.
 
 And lastly I chose XGBoost as it is fast and it has number of hyperparameter to optimize the model's performance.
-<p align='center'>
-<img src="images/model.png" width="700" height="550" >
-<p/>
+
+
+![image](https://user-images.githubusercontent.com/10523313/210928244-455ac2a3-9feb-4e63-b992-fa62061ae933.png)
+
 
 Out of all the models it was surprising that RandomForest  with best params didn't do a good job in terms of low F1 scores (31) and extremly high number of false positive cases (10k+), which means that more than 10,000 comments would be flagged as they are toxic when they are not.
 
@@ -59,13 +60,12 @@ The top 3 models are:
 
 ### Best Model
 
-<p align='center'>
   <img src="images/ensemble_auc.png" width="700" height="550">
-</p>
+
 This last ensemble model performed the best. This model combines the prediction of the MultinomialNB and the XGBoost model with best params. This Stacking model uses the tfidf vectorizer and SMOTE. The resulting model has a high recall score of 84% and an AUC of 0.97 on the test set, with relatively low numbers of false negatives (492) and false positives (1111).
-<p align='center'>
+
   <img src="images/matrix.png" width="700" height="550">
-</p>
+
 Part of the reason I chose this model is becaue this model had the lowest FN - FP pair. It is important to minimize the number of false negatives, because we want to minimize type II errors, users wouldn't be flagged for writting toxic comments, when actually they are.
 
 ## Conclusions
