@@ -19,7 +19,7 @@ There is a high imbalance 90.5% - 9.5% in normal and toxic classes, this will be
 
 Top 20 tokens in the whole corpus
 <p align='center'>
-  <img src="images/top20_tokens_all.png" width="600" height="400">
+  <img src="images/top20_tokens_all.png" width="700" height="550">
 </p>
 As expedted of wikipedia comments most users are discussing articles and discussing edits, all the words represnted are normal. None of them are toxic.
 <br/>
@@ -28,7 +28,7 @@ As expedted of wikipedia comments most users are discussing articles and discuss
 
 Top 20 toxic tokens
 <p align='center'>
-  <img src="images/top20_toxic_.png" width="600" height="400">
+  <img src="images/top20_toxic_.png" width="700" height="550">
 </p>
 The above wordcloud of most frequent toxic comments clearly shows that some users use abusive language to harass others, thereby creating a toxic and unwelcoming environment, which would lead to more users either simply not expressing themself on the online platform or leave it altogether.
 
@@ -46,7 +46,7 @@ Random Forest can also handle high-dimensional data well. It is robust to noise 
 
 And lastly I chose XGBoost as it is fast and it has number of hyperparameter to optimize the model's performance.
 
-<img src="images/model.png" width="600" height="400" >
+<img src="images/model.png" width="700" height="550" >
 
 Out of all the models it was surprising that RandomForest  with best params didn't do a good job in terms of low F1 scores (31) and extremly high number of false positive cases (10k+), which means that more than 10,000 comments would be flagged as they are toxic when they are not.
 
@@ -59,11 +59,11 @@ The top 3 models are:
 ### Best Model
 
 <p align='center'>
-  <img src="images/ensemble_auc.png" width="600" height="400">
+  <img src="images/ensemble_auc.png" width="700" height="550">
 </p>
 This last ensemble model performed the best. This model combines the prediction of the MultinomialNB and the XGBoost model with best params. This Stacking model uses the tfidf vectorizer and SMOTE. The resulting model has a high recall score of 84% and an AUC of 0.97 on the test set, with relatively low numbers of false negatives (492) and false positives (1111).
 <p align='center'>
-  <img src="images/matrix.png" width="600" height="400">
+  <img src="images/matrix.png" width="700" height="550">
 </p>
 Part of the reason I chose this model is becaue this model had the lowest FN - FP pair. It is important to minimize the number of false negatives, because we want to minimize type II errors, users wouldn't be flagged for writting toxic comments, when actually they are.
 
