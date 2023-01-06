@@ -60,10 +60,10 @@ Due to the high imbalance the model might not had enough toxic data to train on.
 ## Repository Structure
 ```
 ├── data
+├── src
 ├── images
 ├── .gitignore
 ├── README.md
 ├── Toxic_Comment_Classification-toxic-stem.ipynb
-├── Toxic_Comment_Classification-toxic-lemmatization.ipynb
-└── presentation.pdf
+└── Toxic_Comment_Classification-toxic-lemmatization.ipynb
 ```
