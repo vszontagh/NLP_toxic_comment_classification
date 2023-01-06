@@ -49,6 +49,22 @@ And lastly I chose XGBoost as it is fast and it has number of hyperparameter to 
 <img src="images/model.png" width="700" height="550" >
 <p/>
 
+Models	Recall	F1	AUC	FN	FP
+Model1 - MultinomialNB - CountVectorizer	83	66	0.89	2495	5
+Model2 - MultinomialNB - CountVectorizer, SMOTE	83	66	0.95	557	1869
+Model2b - MultinomialNB - best params - CountVectorizer - SMOTE	83	66	0.95	512	2156
+Model3- MultinomialNB -best params - TfidfVectorizer - SMOTE	82	63	0.94	561	2403
+Model4 - RandomForest - TfidfVectorizer - SMOTE	60	69	0.96	1231	390
+Model4b - RandomForest - CountVectorizer - SMOTE	59	69	0.96	1257	349
+Model5 - RandomForest - best params -CountVectorizer - SMOTE	82	31	0.83	554	10000
+Model5b - RandomForest - best params -CountVectorizer - RandomOverSampler	86	31	0.86	416	11432
+Model6 - XGBoost - CountVectorizer - RandomOverSampler	79	79	0.95	649	1058
+Model6 - XGBoost - best params -CountVectorizer - RandomOverSampler	82	75	0.96	547	1110
+Model7 - Ensemble - Stacking - MultinomialNB - XGBoost - 	84	76	0.97	492	1111
+![image](https://user-images.githubusercontent.com/10523313/210928244-455ac2a3-9feb-4e63-b992-fa62061ae933.png)
+
+
+
 Out of all the models it was surprising that RandomForest  with best params didn't do a good job in terms of low F1 scores (31) and extremly high number of false positive cases (10k+), which means that more than 10,000 comments would be flagged as they are toxic when they are not.
 
 The top 3 models are:
